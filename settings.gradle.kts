@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google()
         mavenCentral()
@@ -15,4 +16,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "FindMyIP"
 include(":app")
- 
+include(":feature:findmyip")
+include(":core:designsystem")
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
