@@ -1,27 +1,43 @@
 [versions]
+#plugin versions
 agp = "8.2.2"
 kotlin = "1.9.22"
+
+#build properties
 compile-sdk = "34"
 min-sdk = "23"
-multidex = "2.0.1"
 target-sdk = "34"
 version-code = "1"
 version-name = "2024.03.01"
+multidex = "2.0.1"
+
 #compose
-androidx-compose-bom = "2024.02.01"
-activity-compose = "1.8.2"
-#androidX
-core-ktx = "1.12.0"
-lifecycle-runtime-ktx = "2.7.0"
+androidx-compose-bom = "2024.02.01" #feature
+activity-compose = "1.8.2" #activity
+androidx-hilt-navigation-compose = "1.2.0" #viewmodel
+androidx-navigation = "2.7.7" #activity
+androidx-lifecycle = "2.7.0"
+hilt = "2.50"
+ksp = "1.9.22-1.0.17"
+core = "1.12.0" #https://github.com/google/ksp/releases
 
 [libraries]
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
-androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 kotlin-android-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
 #activity
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
-androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
-androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidx-navigation" }
+
+#dagger-hilt
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidx-hilt-navigation-compose" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+
+#lifecycle
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+
 
 #compose
 androidx-compose-bom = { group = "androidx.compose", name="compose-bom", version.ref = "androidx-compose-bom"}
@@ -33,6 +49,7 @@ androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
 #androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class" }
 
 
@@ -43,9 +60,11 @@ photon-android-application-compose = { id = "photon.android.application.compose"
 photon-android-feature = { id = "photon.android.feature", version = "unspecified" }
 photon-android-library = { id = "photon.android.library", version = "unspecified" }
 photon-android-library-compose = { id = "photon.android.library.compose", version = "unspecified" }
-
+photon-android-hilt = { id = "photon.android.hilt", version = "unspecified" }
 
 #framework level plugins
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

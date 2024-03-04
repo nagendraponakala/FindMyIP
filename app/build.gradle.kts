@@ -3,6 +3,7 @@
 plugins {
     alias(libs.plugins.photon.android.application)
     alias(libs.plugins.photon.android.application.compose)
+    alias(libs.plugins.photon.android.hilt)
 }
 
 android {
@@ -34,9 +35,8 @@ android {
 
 dependencies {
     implementation(libs.androidx.multidex)
-//    implementation(libs.androidx.core.ktx)
-//    implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
     implementation(projects.core.designsystem)
-
+    implementation(projects.feature.findmyip)
 }
