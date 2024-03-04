@@ -33,5 +33,9 @@ gradlePlugin{
             id = "photon.android.feature"
             implementationClass = "AndroidFeatureConventionPlugin"
         }
+        register("androidHilt"){
+            id = "photon.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
     }
 }

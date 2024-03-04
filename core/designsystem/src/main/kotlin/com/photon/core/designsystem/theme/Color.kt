@@ -1,4 +1,4 @@
-package com.photon.findmyip.ui.theme
+package com.photon.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
