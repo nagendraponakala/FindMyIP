@@ -1,43 +1,37 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    `kotlin-dsl`
 }
 
-android {
-    namespace = "com.photon"
-    compileSdk = 34
-
-    defaultConfig {
-        minSdk = 23
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
+group = "com.photon.buildlogic"
 
 dependencies {
+    compileOnly(libs.android.gradle.plugin){
+        because("gradle plugin to build android applications")
+    }
+    compileOnly(libs.kotlin.android.plugin)
+}
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+gradlePlugin{
+    plugins {
+        register("androidApplication"){
+            id = "photon.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+        register("androidApplicationCompose"){
+            id = "photon.android.application.compose"
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
+        register("androidLibrary"){
+            id = "photon.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+        register("androidLibraryCompose"){
+            id = "photon.android.library.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
+        }
+        register("androidFeature"){
+            id = "photon.android.feature"
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
+    }
 }

@@ -1,0 +1,51 @@
+[versions]
+agp = "8.2.2"
+kotlin = "1.9.22"
+compile-sdk = "34"
+min-sdk = "23"
+multidex = "2.0.1"
+target-sdk = "34"
+version-code = "1"
+version-name = "2024.03.01"
+#compose
+androidx-compose-bom = "2024.02.01"
+activity-compose = "1.8.2"
+#androidX
+core-ktx = "1.12.0"
+lifecycle-runtime-ktx = "2.7.0"
+
+[libraries]
+android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+kotlin-android-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+#activity
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
+
+#compose
+androidx-compose-bom = { group = "androidx.compose", name="compose-bom", version.ref = "androidx-compose-bom"}
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout" }
+androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+#androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class" }
+
+
+[plugins]
+#convention plugins
+photon-android-application = { id = "photon.android.application", version = "unspecified" }
+photon-android-application-compose = { id = "photon.android.application.compose", version = "unspecified" }
+photon-android-feature = { id = "photon.android.feature", version = "unspecified" }
+photon-android-library = { id = "photon.android.library", version = "unspecified" }
+photon-android-library-compose = { id = "photon.android.library.compose", version = "unspecified" }
+
+
+#framework level plugins
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
