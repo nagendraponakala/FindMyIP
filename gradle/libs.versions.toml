@@ -11,6 +11,12 @@ version-code = "1"
 version-name = "2024.03.01"
 multidex = "2.0.1"
 
+#network
+retrofit = "2.9.0"
+kotlinx-serialization = "1.6.3"
+retrofit-kotlinx-serialization-converter = "1.0.0"
+okhttp = "4.12.0"
+
 #compose
 androidx-compose-bom = "2024.02.01" #feature
 activity-compose = "1.8.2" #activity
@@ -19,7 +25,13 @@ androidx-navigation = "2.7.7" #activity
 androidx-lifecycle = "2.7.0"
 hilt = "2.50"
 ksp = "1.9.22-1.0.17"
-core = "1.12.0" #https://github.com/google/ksp/releases
+core = "1.12.0"
+core-ktx = "1.12.0"
+junit = "4.13.2"
+androidx-junit = "1.1.5"
+espresso-core = "3.5.1"
+appcompat = "1.6.1"
+material = "1.10.0" #https://github.com/google/ksp/releases
 
 [libraries]
 android-gradle-plugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
@@ -38,6 +50,11 @@ hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.re
 androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
 
+#network
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+retrofit-kotlinx-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit-kotlinx-serialization-converter" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
 #compose
 androidx-compose-bom = { group = "androidx.compose", name="compose-bom", version.ref = "androidx-compose-bom"}
@@ -50,6 +67,12 @@ androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-core = { group = "androidx.core", name = "core", version.ref = "core" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-junit" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 #androidx-compose-material3-windowSizeClass = { group = "androidx.compose.material3", name = "material3-window-size-class" }
 
 
@@ -68,3 +91,4 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin"}

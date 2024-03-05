@@ -15,8 +15,11 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "FindMyIP"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":feature:findmyip")
 include(":core:designsystem")
 include(":core:data")
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+include(":core:model")
+include(":core:network")
+include(":core:common")
