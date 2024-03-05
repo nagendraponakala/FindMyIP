@@ -42,5 +42,8 @@ As mentioned above, this app's UI is completely written in Jetpack Compose. Some
 
 *Error, Loading, Success*
 
+### Demo
+![Demo](screenshots/demo.gif)
+
 # License
 Find My IP is distributed under the terms of the Apache License (Version 2.0).
