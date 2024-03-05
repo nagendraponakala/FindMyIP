@@ -16,7 +16,7 @@ import javax.inject.Inject
 class FindMyIpViewModel @Inject constructor(
     repository: FindMyIpRepository
 ) : ViewModel() {
-    var findMyIpUiState: StateFlow<FindMyIpUiState> = repository
+    private var _findMyIpUiState: StateFlow<FindMyIpUiState> = repository
         .findMyIp()
         .map {
             return@map when(it){
@@ -34,4 +34,6 @@ class FindMyIpViewModel @Inject constructor(
             initialValue = FindMyIpUiState.Loading,
             started = SharingStarted.WhileSubscribed(5_000)
         )
+
+    var findMyIpUiState: StateFlow<FindMyIpUiState> = this._findMyIpUiState
 }
