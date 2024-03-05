@@ -73,7 +73,9 @@ internal fun FindMyIpScreen(
                     contentAlignment = Alignment.Center,
                     modifier = Modifier.fillMaxSize()
                 ) {
-                    CircularProgressIndicator()
+                    CircularProgressIndicator(
+                        color = MaterialTheme.colorScheme.primary
+                    )
                 }
             }
             is FindMyIpUiState.Success -> {
@@ -158,8 +160,6 @@ fun TopAppBar(
     }
 }
 
-
-
 @Preview
 @Composable
 fun FindMyIpScreenPreview() {
@@ -191,5 +191,13 @@ fun FindMyIpDetailsScreenPreview() {
             latitude = 17.3724,
             longitude = 78.4378
         )
+    )
+}
+
+@Preview
+@Composable
+fun FindMyIpScreenLoadingPreview() {
+    FindMyIpScreen(
+        uiState = FindMyIpUiState.Loading
     )
 }
