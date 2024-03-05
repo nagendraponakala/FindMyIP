@@ -34,14 +34,13 @@ Feel free to explore the codebase and contribute to the project!
 As mentioned above, this app's UI is completely written in Jetpack Compose. Some screens highlighted are:
 
 ### Screenshots
-![Error](screenshots/error.png)
-*Error*
+<div style="display: flex; justify-content: space-between;">
+  <img src="screenshots/error.png" alt="Error" width="250"/>
+  <img src="screenshots/loading.png" alt="Loading" width="250"/>
+  <img src="screenshots/success.png" alt="Success" width="250"/>
+</div>
 
-![Loading](screenshots/loading.png)
-*Loading*
-
-![Success](screenshots/success.png)
-*Success*
+*Error, Loading, Success*
 
 # License
 Find My IP is distributed under the terms of the Apache License (Version 2.0).
